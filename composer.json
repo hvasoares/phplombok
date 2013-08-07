@@ -1,0 +1,16 @@
+{
+    "name": "hvasoares/phplombok",
+    "description": "this is lombok inspired project for php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hugo Vinícius Alves Soares",
+            "email": "hvasoares@gmail.com"
+        }
+    ],
+    "require": {
+	"doctrine/annotations": "v1.1.2",
+	"hvasoares/commons": "1.0.0",
+	"smarty/smarty": "v3.1.13"
+    }
+}
