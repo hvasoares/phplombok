@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "db6229e3b7411a7512b33098a018399c",
+    "hash": "8b5473b29f7583cd4df48f9681bfe2be",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -191,6 +191,39 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "davedevelopment/hamcrest-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/davedevelopment/hamcrest-php.git",
+                "reference": "e4ffaf43b25065fe7d1e5fa173d271ca7e065ff0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/davedevelopment/hamcrest-php/zipball/e4ffaf43b25065fe7d1e5fa173d271ca7e065ff0",
+                "reference": "e4ffaf43b25065fe7d1e5fa173d271ca7e065ff0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Hamcrest": "hamcrest"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "description": "This is the PHP port of Hamcrest Matchers",
+            "keywords": [
+                "test"
+            ],
+            "time": "2012-06-13 21:26:30"
+        },
         {
             "name": "mockery/mockery",
             "version": "0.8.0",
@@ -660,9 +693,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "davedevelopment/hamcrest-php": 20
+    },
     "platform": [
 
     ],
