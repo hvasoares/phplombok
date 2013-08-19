@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "8b5473b29f7583cd4df48f9681bfe2be",
+    "hash": "28c50ba1bedea99b606e086844d58ae8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -130,21 +130,36 @@
         },
         {
             "name": "hvasoares/commons",
-            "version": "1.0.0",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hvasoares/commons.git",
-                "reference": "1.0.0"
+                "reference": "1.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hvasoares/commons/zipball/1.0.0",
-                "reference": "1.0.0",
+                "url": "https://api.github.com/repos/hvasoares/commons/zipball/1.0.4",
+                "reference": "1.0.4",
                 "shasum": ""
             },
             "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "hvasoares\\commons\\": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2013-07-02 03:00:19"
+            "license": [
+                "mpl"
+            ],
+            "authors": [
+                {
+                    "name": "Hugo Vinícius Alves Soares",
+                    "email": "hvasoares@gmail.com"
+                }
+            ],
+            "description": "my commons classes used in so many projects",
+            "time": "2013-07-13 06:30:24"
         },
         {
             "name": "smarty/smarty",

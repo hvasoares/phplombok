@@ -10,12 +10,15 @@
     ],
     "require": {
 	"doctrine/annotations": "v1.1.2",
-	"hvasoares/commons": "1.0.0",
+	"hvasoares/commons": "1.0.4",
 	"smarty/smarty": "v3.1.13"
     },
     "require-dev":{
     	"phpunit/phpunit": "3.7.1",
 	"mockery/mockery":"0.8.0",
 	"davedevelopment/hamcrest-php": "dev-master"
+    },
+    "autoload":{
+    	"psr-0":{"hvasoares\\phplombok\\": "src/"}
     }
 }
