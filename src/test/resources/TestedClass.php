@@ -1,9 +1,11 @@
 <?
 namespace hvasoares\phplombok\testresources;
 
-use hvasoares\phplombok\annotations\JQProperty;
+use hvasoares\phplombok\JqueryProperty;
+
 class TestedClass{
-	private $shouldShowThisProperty;
+	/** @JQueryProperty */
+	private $testedProperty;
 
 	/** @SampleAnnotation */
 	private $annotatedProperty1;

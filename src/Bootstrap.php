@@ -15,3 +15,6 @@ require_once __DIR__."/PropertyAccessorTemplate.php";
 require_once __DIR__."/Builder.php";
 require_once __DIR__."/Cache.php";
 require_once __DIR__."/JsonPersistentArray.php";
+require_once __DIR__."/PropertyAccessorConfig.php";
+require_once __DIR__."/test/resources/TestedClass.php";
+require_once __DIR__."/test/resources/TestedClass2.php";

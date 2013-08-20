@@ -1,7 +1,6 @@
 <?php
 namespace hvasoares\phplombok;
 require_once 'Cache.php';
-require_once __DIR__."/resources/TesteClass.php";
 use hvasoares\phplombok\testresources as tr;
 class CacheTest extends \PHPUnit_Framework_Testcase{
 	public function testShouldCheckIfTheClassNotExists(){

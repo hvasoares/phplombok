@@ -1,7 +1,7 @@
 <?php
 namespace hvasoares\phplombok;
 require_once 'Template.php';
-require_once __DIR__."/resources/TesteClass.php";
+require_once __DIR__."/resources/TestedClass.php";
 use \Mockery as m;
 class TemplateTest extends \PHPUnit_Framework_Testcase{
 	public function testShouldGenerateClassCode(){

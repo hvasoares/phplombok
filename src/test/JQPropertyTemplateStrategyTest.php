@@ -22,7 +22,7 @@ class GetterTemplateStrategy extends \PHPUnit_Framework_Testcase{
 
 
 		$this->assertEquals(
-'public function property($value){
+'public function property($value=null){
 	if($value==null){
 		//getting $result for property
 		return $result;

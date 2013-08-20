@@ -15,15 +15,15 @@ public function setAnnotatedObject(\$object){
 }
 public function getReflectedProperty(\$property){
 	\$prop = \$this->reflectedObject->getProperty(\$property);
-	\$prop->setAcessible(true);
-	return \$prop->getValue(\$this-annotatedObject);
+	\$prop->setAccessible(true);
+	return \$prop->getValue(\$this->annotatedObject);
 }
 public function setReflectedProperty(\$property,\$newValue){
 	\$prop = \$this->reflectedObject->getProperty(\$property);
-	\$prop->setAcessible(true);
+	\$prop->setAccessible(true);
 	\$prop->setValue(\$this->annotatedObject,\$newValue);
 }",
-			$this->inst->generateSupportMethods()
+			$this->inst->generateSupportCode()
 		);
 	}
 

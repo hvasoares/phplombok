@@ -7,7 +7,11 @@ class Cache{
 	}
 
 	public function classExists($className){
-		return isset($this->lockFile[$className]);
+		if(isset($this->lockFile[$className])){
+			require_once $this->lockFile[$className];
+			return true;
+		}
+		return false;
 	} 
 	public function generateAndLoadClassFile($className,$classContent){
 		$newFile = $this->dir."/".time().".php";

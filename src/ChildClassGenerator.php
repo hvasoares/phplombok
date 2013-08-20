@@ -13,19 +13,20 @@ class ChildClassGenerator{
 		);
 		$newClassName = $oldClassName.time();
 		
-		if(!$this->c->classExists(get_class($obj)))
+		if(!$this->c->classExists(get_class($obj))){
 			$this->c->generateAndLoadClassFile(
+				get_class($obj),
 				$this->t->generateInheritedClass(
 					$newClassName,
 					$obj
-				),
-				$obj
+				)
 			);
-		$this->f->configure(
-			$refObj->getName(),
-			$refObj->getNamespaceName()."\\"
-				.$newClassName
-		);
+			$this->f->configure(
+				$refObj->getName(),
+				$refObj->getNamespaceName()."\\"
+					.$newClassName
+			);
+		}
 
 		return $this->f->get($obj);	
 	}

@@ -1,6 +1,6 @@
 <?php
 namespace hvasoares\phplombok;
-require 'JsonPersistentArray.php';
+require_once 'JsonPersistentArray.php';
 class JsonPersitentArrayTest extends \PHPUnit_Framework_Testcase{
 	public function testShouldPersistTheValuesAsJson(){
 		$inst = new JsonPersistentArray("/tmp/persists.json");

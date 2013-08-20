@@ -1,8 +1,7 @@
 <?php
 namespace hvasoares\phplombok;
 use \Mockery as m;
-require __DIR__."/resources/TesteClass.php";
-require "ChildClassGenerator.php";
+require_once "ChildClassGenerator.php";
 use hvasoares\phplombok\testresources as tr;
 class ChildClassGeneratorTest extends \PHPUnit_Framework_Testcase{
 	public function testShouldGenerateClassGivenAnotherOne(){
@@ -20,8 +19,8 @@ class ChildClassGeneratorTest extends \PHPUnit_Framework_Testcase{
 			->once();
 		$cache->shouldReceive('generateAndLoadClassFile')
 			->with(
-				'someClassCode',
-				$obj
+				'hvasoares\phplombok\testresources\TestedClass',
+				'someClassCode'
 			)
 			->once();
 

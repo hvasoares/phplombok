@@ -9,24 +9,33 @@ class GlueCode{
 				$accessorTemplate = 	new PropertyAccessorTemplate(),
 				$r['phplombok_debug']
 		);
+
+		$lombokLock = new JsonPersistentArray($r['phplombok_cachedir']."/phplombok.lock");
+		if(!isset($lombokLock['classCache']))
+			$lombokLock['classCache'] = $r['phplombok_cachedir']."/classCache".time();
+
+		if(!isset($lombokLock['cacheFile']))
+			$lombokLock['cacheFile'] = $r['phplombok_cachedir']."/cacheFile".time();
+
+		$builder = new Builder( new JsonPersistentArray(
+			$lombokLock['classCache']
+		));
+
+		$builder->add(new PropertyAccessorConfig());
 		$r['childClassGenerator']=new ChildClassGenerator(
 			new Cache(
-
 				$r['phplombok_cachedir'],
-				new JsonPersistentArray(
-					$r['phplombok_generated_class_dir']
-					."/".time().".json"
-				)
-
+				new JsonPersistentArray($lombokLock['cacheFile'])
 			),
 			new Template($annotationStrategy),
-			new Factory()
+			$builder
 		);
 
 		$annotationStrategy->setTemplateStrategy(
 			new JQueryProperty(),
 			new JQPropertyTemplateStrategy($accessorTemplate)
 		);
+
 		
 		$r['phplombok_annotationStrategy'] = $annotationStrategy;
 

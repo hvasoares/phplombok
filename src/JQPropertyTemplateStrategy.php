@@ -13,7 +13,7 @@ class JQPropertyTemplateStrategy{
 		);
 
 		return (
-"public function $property(\$value){
+"public function $property(\$value=null){
 	if(\$value==null){
 		$valueGetting
 		return \$result;
