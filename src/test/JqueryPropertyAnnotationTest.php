@@ -4,7 +4,6 @@ use \hvasoares\commons as c;
 require_once 'GlueCode.php';
 class JQueryPropertyAnnotationTest extends \PHPUnit_Framework_Testcase{
 	public function testShouldGeneratePropertiesLikeJQuery(){
-		echo "############################3oi###########################";
 		$r = new c\Registry();
 		$r['phplombok_debug']=true;
 		$r['phplombok_cachedir']="/tmp/";
@@ -45,20 +44,8 @@ class JQueryPropertyAnnotationTest extends \PHPUnit_Framework_Testcase{
 			$prop1->getValue($obj),
 			$newObj->testedProperty2(1)
 				->testedProperty1()
-		);
+			);
 
-	}
-	public function tearDown(){
-		$json = new JsonPersistentArray("/tmp/phplombok.lock");
-		$jsonCache = new JsonPersistentArray($json['cacheFile']);
-
-
-		$obj = new testresources\TestedClass2();
-		unlink($jsonCache[get_class($obj)]);
-
-		unlink($json['cacheFile']);
-		unlink($json['classCache']);
-		unlink("/tmp/phplombok.lock");
 	}
 }
 ?>

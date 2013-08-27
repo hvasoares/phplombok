@@ -10,7 +10,7 @@ class AnnotationStrategyDoctrineTest extends \PHPUnit_Framework_Testcase{
 
 		$inst = new AnnotationStrategyDoctrine(
 			"/tmp/",
-			$accessorTemplate = m::mock('accessorTmpl'),
+			$supportCode = m::mock('accessorTmpl'),
 			$debug = true
 		);
 
@@ -20,9 +20,10 @@ class AnnotationStrategyDoctrineTest extends \PHPUnit_Framework_Testcase{
 		);
 
 
-		$accessorTemplate->shouldReceive(
+		$supportCode->shouldReceive(
 			'generateSupportCode'
-		)->andReturn("//support methods")
+		)->with(m::type('hvasoares\phplombok\testresources\SampleAnnotation'))
+		->andReturn("//support methods")
 		->once();
 
 		$strategy->shouldReceive('generate')
@@ -38,9 +39,9 @@ class AnnotationStrategyDoctrineTest extends \PHPUnit_Framework_Testcase{
 		$result =$inst->generateCode("someNewClass",$testObject);	
 		$this->assertEquals(
 			$result,
-			"//support methods"
-			."//code for annotatedProperty1"
+			"//code for annotatedProperty1"
 			."//code for annotatedProperty2"
+			."//support methods"
 		);
 	}
 }

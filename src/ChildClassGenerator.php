@@ -12,7 +12,6 @@ class ChildClassGenerator{
 			explode("\\",$refObj->getName())
 		);
 		$newClassName = $oldClassName.time();
-		
 		if(!$this->c->classExists(get_class($obj))){
 			$this->c->generateAndLoadClassFile(
 				get_class($obj),

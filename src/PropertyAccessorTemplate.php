@@ -3,12 +3,7 @@ namespace hvasoares\phplombok;
 class PropertyAccessorTemplate {
 	public function generateSupportCode(){
 		return (
-"
-public function setAnnotatedObject(\$object){
-	\$this->annotatedObject = \$object;
-	\$this->reflectedObject = new \ReflectionObject(\$object);
-}
-public function getReflectedProperty(\$property){
+"public function getReflectedProperty(\$property){
 	\$prop = \$this->reflectedObject->getProperty(\$property);
 	\$prop->setAccessible(true);
 	return \$prop->getValue(\$this->annotatedObject);

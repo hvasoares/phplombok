@@ -20,6 +20,11 @@ class Template{
 "<?php
 namespace $namespace;
 class $newClassName extends $className{
+	public function setAnnotatedObject(\$object){
+		\$this->annotatedObject = \$object;
+		\$this->reflectedObject = new \ReflectionObject(\$object);
+	}
+
 	$innerCode	
 }
 ?>";

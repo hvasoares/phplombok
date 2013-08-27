@@ -6,11 +6,11 @@ class GlueCode{
 		$r = new c\Registry($registryWithConfig);
 		$annotationStrategy=	new AnnotationStrategyDoctrine(
 				$r['phplombok_cachedir'],
-				$accessorTemplate = 	new PropertyAccessorTemplate(),
+				$supportCode = 	new SupportCodeChain(),
 				$r['phplombok_debug']
 		);
 
-		$lombokLock = new JsonPersistentArray($r['phplombok_cachedir']."/phplombok.lock");
+		$lombokLock = new JsonPersistentArray($r['phplombok_cachedir']."/phplombok.lock".($r['phplombok_debug']? time():""));
 		if(!isset($lombokLock['classCache']))
 			$lombokLock['classCache'] = $r['phplombok_cachedir']."/classCache".time();
 
@@ -31,10 +31,33 @@ class GlueCode{
 			$builder
 		);
 
+		$supportCode->add(
+			$jqAnnot =new JQueryProperty(),
+			$accessorTemplate =new PropertyAccessorTemplate()
+		);
+
 		$annotationStrategy->setTemplateStrategy(
-			new JQueryProperty(),
+			$jqAnnot,
 			new JQPropertyTemplateStrategy($accessorTemplate)
 		);
+
+		$annotationStrategy->setTemplateStrategy(
+			$delAnnot = new Delegate(),
+			$delConfig =new DelegateConfig($r)
+		);
+
+		$supportCode->add(
+			$delAnnot,
+			new DelegatePropertyTemplate()
+		);
+
+		$builder->add($delConfig);
+
+
+		$r['delegateCallQueue'] = function($r){
+			return new DelegateCallQueue();
+		};
+
 
 		
 		$r['phplombok_annotationStrategy'] = $annotationStrategy;

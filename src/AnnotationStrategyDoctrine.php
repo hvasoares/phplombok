@@ -11,21 +11,22 @@ class AnnotationStrategyDoctrine implements AnnotationStrategy{
 	}
 	public function generatecode($newClassName,$object){
 		$refObj = new \ReflectionObject($object);
-		$code = $this->pat->generateSupportCode();
-		foreach($refObj->getProperties() as $p)
+		$this->supportCode=array();
+		$code="";
+		foreach($refObj->getProperties() as $p){
 			$code .= $this->generateCodeProperty($p);
-
+		}
 		return $code;
-		
 	}
 	private function generateCodeProperty($p){
 		$result = "";
 		foreach($this->reader->getPropertyAnnotations($p) as	$annot){
 			$key = get_class($annot);
 			if(isset($this->strategyDb[$key])){
-				$result .=$this->strategyDb[$key]->generate(
-						$p->getName()
-					);
+				$result .=$this->strategyDb[$key]->generate($p->getName());
+				if(isset($this->supportCode[$key])) break;
+				$result .=$this->pat->generateSupportCode($annot);
+				$this->supportCode[$key]=true;
 			}
 		}
 		return $result;
@@ -35,5 +36,4 @@ class AnnotationStrategyDoctrine implements AnnotationStrategy{
 		$this->strategyDb[$refObj->getName()] =$templateStrategy;
 		$this->registry->registerFile($refObj->getFileName());
 	}
-}
-?>
+}?>

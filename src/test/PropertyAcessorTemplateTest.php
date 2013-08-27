@@ -8,12 +8,7 @@ class PropertyAccessorTemplateTest extends \PHPUnit_Framework_Testcase{
 	}
 	public function testShouldGenerateSupportMethods(){
 		$this->assertEquals(
-"
-public function setAnnotatedObject(\$object){
-	\$this->annotatedObject = \$object;
-	\$this->reflectedObject = new \ReflectionObject(\$object);
-}
-public function getReflectedProperty(\$property){
+"public function getReflectedProperty(\$property){
 	\$prop = \$this->reflectedObject->getProperty(\$property);
 	\$prop->setAccessible(true);
 	return \$prop->getValue(\$this->annotatedObject);

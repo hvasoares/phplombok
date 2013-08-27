@@ -25,6 +25,11 @@ class TemplateTest extends \PHPUnit_Framework_Testcase{
 "<?php
 namespace hvasoares\\phplombok\\testresources;
 class GeneratedClass extends TestedClass{
+	public function setAnnotatedObject(\$object){
+		\$this->annotatedObject = \$object;
+		\$this->reflectedObject = new \ReflectionObject(\$object);
+	}
+
 	//someCode
 	//otherCode	
 }
