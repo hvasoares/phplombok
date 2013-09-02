@@ -9,6 +9,10 @@ class TestedClass2{
 
 	/** @JQueryProperty */
 	private $testedProperty2;
+
+	public function methodToBeOverriden(){
+		
+	}
 }
 
 ?>

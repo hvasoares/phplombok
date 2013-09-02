@@ -4,10 +4,12 @@ use hvasoares\commons as c;
 class GlueCode{
 	public function getRegistry($registryWithConfig){
 		$r = new c\Registry($registryWithConfig);
-		$annotationStrategy=	new AnnotationStrategyDoctrine(
+		$annotationStrategy= new PublicMethodOverrideTemplate(
+			new AnnotationStrategyDoctrine(
 				$r['phplombok_cachedir'],
 				$supportCode = 	new SupportCodeChain(),
 				$r['phplombok_debug']
+			)
 		);
 
 		$lombokLock = new JsonPersistentArray($r['phplombok_cachedir']."/phplombok.lock".($r['phplombok_debug']? time():""));

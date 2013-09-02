@@ -21,6 +21,7 @@ require_once __DIR__."/Delegate.php";
 require_once __DIR__."/DelegatePropertyTemplate.php";
 require_once __DIR__."/DelegateCallQueue.php";
 require_once __DIR__."/SupportCodeChain.php";
+require_once __DIR__."/PublicMethodOverrideTemplate.php";
 require_once __DIR__."/test/resources/TestedClass.php";
 require_once __DIR__."/test/resources/TestedClass2.php";
 require_once __DIR__."/test/resources/TestedClass3.php";

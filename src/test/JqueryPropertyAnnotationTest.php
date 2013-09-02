@@ -46,6 +46,11 @@ class JQueryPropertyAnnotationTest extends \PHPUnit_Framework_Testcase{
 				->testedProperty1()
 			);
 
+		$this->assertEquals(
+			$newObj->methodToBeOverriden(),
+			$obj->methodToBeOverriden()
+		);
+
 	}
 }
 ?>

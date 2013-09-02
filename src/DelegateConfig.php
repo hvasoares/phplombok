@@ -10,6 +10,9 @@ class DelegateConfig{
 		$this->propertyBuffer[]=$property;
 	}
 	public function configure($oldObj,$newObject){
+		$ref = new \ReflectionObject($newObject);
+		if(!$ref->hasMethod('setDelegateCallQueue'))
+			return $newObject;	
 		$delegateQueue = $this->r['delegateCallQueue'];
 		foreach($this->propertyBuffer as $prop){
 			$delegateQueue->addProperty($prop);	

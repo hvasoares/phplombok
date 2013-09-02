@@ -25,6 +25,9 @@ class $newClassName extends $className{
 		\$this->reflectedObject = new \ReflectionObject(\$object);
 	}
 
+	public function getAnnotatedObject(){
+		return \$this->annotatedObject;
+	}
 	$innerCode	
 }
 ?>";

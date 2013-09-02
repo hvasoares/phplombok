@@ -30,6 +30,9 @@ class GeneratedClass extends TestedClass{
 		\$this->reflectedObject = new \ReflectionObject(\$object);
 	}
 
+	public function getAnnotatedObject(){
+		return \$this->annotatedObject;
+	}
 	//someCode
 	//otherCode	
 }
