@@ -12,14 +12,14 @@ class GlueCode{
 			)
 		);
 
-		$lombokLock = new JsonPersistentArray($r['phplombok_cachedir']."/phplombok.lock".($r['phplombok_debug']? time():""));
+		$lombokLock = new c\JsonPersistentArray($r['phplombok_cachedir']."/phplombok.lock".($r['phplombok_debug']? time():""));
 		if(!isset($lombokLock['classCache']))
 			$lombokLock['classCache'] = $r['phplombok_cachedir']."/classCache".time();
 
 		if(!isset($lombokLock['cacheFile']))
 			$lombokLock['cacheFile'] = $r['phplombok_cachedir']."/cacheFile".time();
 
-		$builder = new Builder( new JsonPersistentArray(
+		$builder = new Builder( new c\JsonPersistentArray(
 			$lombokLock['classCache']
 		));
 
@@ -27,7 +27,7 @@ class GlueCode{
 		$r['childClassGenerator']=new ChildClassGenerator(
 			new Cache(
 				$r['phplombok_cachedir'],
-				new JsonPersistentArray($lombokLock['cacheFile'])
+				new c\JsonPersistentArray($lombokLock['cacheFile'])
 			),
 			new Template($annotationStrategy),
 			$builder

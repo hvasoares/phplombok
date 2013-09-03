@@ -10,7 +10,7 @@
     ],
     "require": {
 	"doctrine/annotations": "v1.1.2",
-	"hvasoares/commons": "1.0.4",
+	"hvasoares/commons": "1.0.5",
 	"smarty/smarty": "v3.1.13"
     },
     "require-dev":{
