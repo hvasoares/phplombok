@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "28c50ba1bedea99b606e086844d58ae8",
+    "hash": "870948a2feab0ad67728c3a4438e47d8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -130,16 +130,16 @@
         },
         {
             "name": "hvasoares/commons",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hvasoares/commons.git",
-                "reference": "1.0.4"
+                "reference": "60dd3bfac4466bf512f15b5534544c0af8fce353"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hvasoares/commons/zipball/1.0.4",
-                "reference": "1.0.4",
+                "url": "https://api.github.com/repos/hvasoares/commons/zipball/60dd3bfac4466bf512f15b5534544c0af8fce353",
+                "reference": "60dd3bfac4466bf512f15b5534544c0af8fce353",
                 "shasum": ""
             },
             "type": "library",
@@ -159,7 +159,7 @@
                 }
             ],
             "description": "my commons classes used in so many projects",
-            "time": "2013-07-13 06:30:24"
+            "time": "2013-09-03 00:20:33"
         },
         {
             "name": "smarty/smarty",
@@ -658,17 +658,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.3.3",
+            "version": "v2.3.4",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "v2.3.3"
+                "reference": "5a279f1b5f5e1045a6c432354d9ea727ff3a9847"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/5a279f1b5f5e1045a6c432354d9ea727ff3a9847",
+                "reference": "5a279f1b5f5e1045a6c432354d9ea727ff3a9847",
                 "shasum": ""
             },
             "require": {
@@ -701,7 +701,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-21 12:12:18"
+            "time": "2013-08-24 15:26:22"
         }
     ],
     "aliases": [
