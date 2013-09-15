@@ -19,6 +19,7 @@ class Builder{
 	public function get($obj){
 		$newClass = $this->classDb[get_class($obj)];
 		$newObject = new $newClass();
+		$newObject->setAnnotatedObject($obj);
 		foreach($this->nodes as $node)
 			$newObject = $node->configure($obj,$newObject);
 		return $newObject;
