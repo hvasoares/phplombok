@@ -34,7 +34,7 @@ class GlueCode{
 		);
 
 		$supportCode->add(
-			$jqAnnot =new JQueryProperty(),
+			$jqAnnot =new JqueryProperty(),
 			$accessorTemplate =new PropertyAccessorTemplate()
 		);
 

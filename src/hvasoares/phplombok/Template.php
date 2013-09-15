@@ -19,7 +19,7 @@ class Template{
 		return
 "<?php
 namespace $namespace;
-class $newClassName extends $className{
+class $newClassName extends $className implements \hvasoares\phplombok\GeneratedClass{
 	public function setAnnotatedObject(\$object){
 		\$this->annotatedObject = \$object;
 		\$this->reflectedObject = new \ReflectionObject(\$object);

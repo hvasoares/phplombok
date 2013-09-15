@@ -8,10 +8,12 @@ class ChildClassGenerator{
 	}
 	public function generate($obj){
 		$refObj = new \ReflectionObject($obj);
+		if($refObj->implementsInterface("\\hvasoares\\phplombok\\GeneratedClass"))
+			return $obj;
 		$oldClassName = array_pop(
 			explode("\\",$refObj->getName())
 		);
-		$newClassName = $oldClassName.time();
+		$newClassName = $oldClassName.(time()+rand());
 		if(!$this->c->classExists(get_class($obj))){
 			$this->c->generateAndLoadClassFile(
 				get_class($obj),
