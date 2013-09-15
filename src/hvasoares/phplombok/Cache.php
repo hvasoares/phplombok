@@ -14,7 +14,8 @@ class Cache{
 		return false;
 	} 
 	public function generateAndLoadClassFile($className,$classContent){
-		$newFile = $this->dir."/".time().".php";
+		$classNameToPath = str_replace("\\",".",$className);
+		$newFile = $this->dir."/$classNameToPath.".time().".php";
 		$this->writeToFile($newFile,$classContent);
 		require_once $newFile;
 		return	$this->lockFile[$className]=$newFile;
